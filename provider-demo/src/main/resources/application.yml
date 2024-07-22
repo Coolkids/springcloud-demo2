@@ -1,0 +1,26 @@
+server:
+  port: 8762
+  servlet:
+    context-path: /provider-coolkid
+
+spring:
+  application:
+    name: provider-coolkid
+
+logging:
+  level:
+    root: INFO
+
+app:
+  config:
+    eureka:
+      port: 8761
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${app.config.eureka.port}/eureka/

@@ -1,0 +1,6 @@
+###
+GET http://localhost:8763/consumer-coolkid/client/helloworld
+
+
+###
+GET http://localhost:8765/api/client/helloworld

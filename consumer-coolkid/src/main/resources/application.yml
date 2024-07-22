@@ -1,0 +1,32 @@
+server:
+  port: 8763
+  servlet:
+    context-path: /consumer-coolkid
+
+spring:
+  application:
+    name: consumer-coolkid
+  data:
+    redis:
+      host: 10.10.173.54
+      password: admin
+      port: 6379
+      database: 4
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+
+app:
+  config:
+    eureka:
+      port: 8761
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${app.config.eureka.port}/eureka/
